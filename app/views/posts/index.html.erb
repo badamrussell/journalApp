@@ -1,0 +1,17 @@
+<h1>INDEX?</h1>
+
+<div id="content">
+
+</div>
+
+<script type = "application/json" id="bootstrapped_posts_json">
+  <%= Post.all.to_json.html_safe %>
+</script>
+
+<script type="application/javascript">
+  $(function() {
+    var posts = JSON.parse($("#bootstrapped_posts_json").html());
+
+    window.JournalApp.initialize($("#content"), posts);
+  });
+</script>
