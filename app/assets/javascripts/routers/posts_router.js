@@ -7,6 +7,8 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
 
   routes: {
     "": "index",
+    "posts/new": "new",
+    "posts/:id/update": "update",
     "posts/:id": "show"
   },
 
@@ -18,7 +20,6 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
   },
 
   show: function(id) {
-    console.log("SHOW");
     var thisPost = {}
     _.each(this.collection.models, function(post) {
       if (post.get("id") == id) {
@@ -29,6 +30,27 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
     var newShowView = new JournalApp.Views.PostView({model: thisPost, id: id});
 
     this.$rootEl.html(newShowView.render().$el);
+  },
+
+  new: function() {
+    var newModel = new JournalApp.Models.Post();
+    var newPostView = new JournalApp.Views.PostFormView({model: newModel, collection: this.collection});
+
+    this.$rootEl.html(newPostView.render().$el);
+  },
+
+  update: function(id) {
+    console.log("IN UPDATE!!!")
+    var thisPost = {}
+    _.each(this.collection.models, function(post) {
+      if (post.get("id") == id) {
+        thisPost = post;
+      }
+    })
+
+    var newPostView = new JournalApp.Views.PostFormView({model: thisPost, collection: this.collection});
+
+    this.$rootEl.html(newPostView.render().$el);
   }
 
 

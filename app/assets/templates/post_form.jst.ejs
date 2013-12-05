@@ -1,0 +1,12 @@
+<h1>POST FORM</h1>
+<hr>
+<p> <% model.get('title') %></p>
+<form id="post_form">
+<label for="post_title">Title</label>
+<input type="text" id="post_title" name="post[title]" value="<%= model.get('title') %>"></input>
+
+<label for="post_body">Body</label>
+<input type="text" id="post_body" name="post[body]" value="<%= model.get('body') %>"></input>
+
+<input type="submit" value="Submit"></input>
+</form>

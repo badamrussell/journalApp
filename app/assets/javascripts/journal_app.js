@@ -6,7 +6,7 @@ window.JournalApp = {
   initialize: function($el, posts) {
     var postCollection = new JournalApp.Collections.Posts(posts);
 
-    var JournalRouter = new JournalApp.Routers.PostsRouter($el, postCollection);
+    var JournalRouter = JournalApp.Router = new JournalApp.Routers.PostsRouter($el, postCollection);
     console.log(JournalRouter)
     Backbone.history.start(); //starts route monitoring
 

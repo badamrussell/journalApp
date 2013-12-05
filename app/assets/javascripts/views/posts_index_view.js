@@ -2,9 +2,9 @@ JournalApp.Views.PostsIndexView = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo( this.collection, "remove", this.render.bind(this) );
-    this.listenTo( this.collection, "add", this.render.bind(this) );
-    this.listenTo( this.collection, "change:title", this.render.bind(this) );
-    this.listenTo( this.collection, "reset", this.render.bind(this) );
+    // this.listenTo( this.collection, "add", this.render.bind(this) );
+    // this.listenTo( this.collection, "change:title", this.render.bind(this) );
+    // this.listenTo( this.collection, "reset", this.render.bind(this) );
   },
 
   events: {
