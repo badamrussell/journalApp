@@ -11,11 +11,13 @@ window.JournalApp = {
     Backbone.history.start(); //starts route monitoring
 
 
+    //CSS is not working...
+
     //is it better to pass in the inti
     var indexView = new JournalApp.Views.PostsIndexView({collection: postCollection});
-    var showView = new JournalApp.Views.PostView();
-    $el.append(indexView.render().$el);
-    //$el.append(showView.render().$el);
+    var showView = new JournalApp.Views.PostView({model: postCollection.models[0]});
+    $el.find("#sidebar").html(indexView.render().$el);
+    $el.find("#content").append(showView.render().$el);
   }
 };
 

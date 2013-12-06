@@ -29,7 +29,6 @@ JournalApp.Views.PostFormView = Backbone.View.extend({
       this.model.set(formData);
       this.model.save(formData, { success: this.successHandler, error: this.errorHandler });
     }
-
   },
 
   successHandler: function(model, response, options) {
@@ -39,7 +38,6 @@ JournalApp.Views.PostFormView = Backbone.View.extend({
   },
 
   errorHandler: function(model, xhr, options) {
-
     alert("ERROR",options);
     that.model = model;
   }

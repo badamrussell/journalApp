@@ -11,6 +11,7 @@ JournalApp.Views.PostView = Backbone.View.extend({
     // this.$el.append($postContent);
     // return this;
 
+
     var $edit = $("<a href='#posts/" + this.model.get("id") + "/update'>edit</a>")
 
     var $h2 = $("<h2></h2>");

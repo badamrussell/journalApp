@@ -13,6 +13,8 @@ JournalApp.Views.PostsIndexView = Backbone.View.extend({
 
   render: function() {
     this.$el.empty();
+    var $backLink = $('<a href="#posts/new">new</a>')
+    this.$el.append($backLink);
 
     var $ul = $("<ul></ul>");
 

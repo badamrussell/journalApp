@@ -1,8 +1,12 @@
-<h1>INDEX?</h1>
+<h1>Post Journal</h1>
 
-<div id="content">
+<div id="wrapper">
+  <div id="sidebar"></div>
 
+  <div id="content"></div>
 </div>
+
+
 
 <script type = "application/json" id="bootstrapped_posts_json">
   <%= Post.all.to_json.html_safe %>
@@ -12,6 +16,6 @@
   $(function() {
     var posts = JSON.parse($("#bootstrapped_posts_json").html());
 
-    window.JournalApp.initialize($("#content"), posts);
+    window.JournalApp.initialize($("#wrapper"), posts);
   });
 </script>

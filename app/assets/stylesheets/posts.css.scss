@@ -6,13 +6,21 @@ button {
   background-color: lightblue;
 }
 
-sidebar {
-
-  width: 200px;
-  height: 200px;
+#sidebar {
+  float: left;
+  width: 400px;
+  height: 400px;
+  background-color: violet;
+  margin: 20px;
+  border: 1px solid black;
 }
 
-content {
-  background-color: beige;
+#content {
   float: left;
+  width: 300px;
+  height: 380px;
+  margin: 20px;
+  padding: 10px;
+  background-color: beige;
+  border: 1px solid black;
 }

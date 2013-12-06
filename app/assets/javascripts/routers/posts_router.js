@@ -2,6 +2,8 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
 
   initialize: function($rootEl, postCollection) {
     this.$rootEl = $rootEl;
+    this.$sidebar = $rootEl.find("#sidebar")
+    this.$content = $rootEl.find("#content")
     this.collection = postCollection;
   },
 
@@ -16,7 +18,7 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
     console.log("INDEX")
     var newIndexView = new JournalApp.Views.PostsIndexView({collection: this.collection});
 
-    this.$rootEl.html(newIndexView.render().$el);
+    this.$sidebar.html(newIndexView.render().$el);
   },
 
   show: function(id) {
@@ -29,14 +31,14 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
 
     var newShowView = new JournalApp.Views.PostView({model: thisPost, id: id});
 
-    this.$rootEl.html(newShowView.render().$el);
+    this.$content.html(newShowView.render().$el);
   },
 
   new: function() {
     var newModel = new JournalApp.Models.Post();
     var newPostView = new JournalApp.Views.PostFormView({model: newModel, collection: this.collection});
 
-    this.$rootEl.html(newPostView.render().$el);
+    this.$content.html(newPostView.render().$el);
   },
 
   update: function(id) {
@@ -50,7 +52,7 @@ JournalApp.Routers.PostsRouter = Backbone.Router.extend({
 
     var newPostView = new JournalApp.Views.PostFormView({model: thisPost, collection: this.collection});
 
-    this.$rootEl.html(newPostView.render().$el);
+    this.$content.html(newPostView.render().$el);
   }
 
 
